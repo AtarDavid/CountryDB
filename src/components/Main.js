@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import CountryCard from "./CountryCard";
 
 export default class Main extends Component {
     render() {
         return (
             <main>
-                Main
-      </main>
+                <CountryCard />
+            </main>
         )
     }
 }

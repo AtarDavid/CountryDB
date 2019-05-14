@@ -3,7 +3,6 @@ import AppContext from './AppContext';
 import Header from './Header';
 import Main from './Main';
 import CountryList from './CountryList';
-import "../assets/App.css"
 
 class App extends React.Component {
 
@@ -14,13 +13,12 @@ class App extends React.Component {
           context.results &&
           <>
             <Header />
-            <CountryList />
-            <Main />
+            <div className="content">
+              <CountryList />
+              <Main />
+            </div>
           </>
         }
-        {/* {console.log(context.results)
-          (
-          )} */}
       </AppContext.Consumer>)
   }
 }
