@@ -7,6 +7,7 @@ export default class AppProvider extends Component {
         results: null,
         chosenCountry: "Germany",
         chosenLanguage: "en",
+        flag: "https://restcountries.eu/data/gbr.svg",
         search: () => {
             fetch(`https://restcountries.eu/rest/v2/all`)
                 .then(response => response.json())
@@ -20,8 +21,12 @@ export default class AppProvider extends Component {
             this.setState({ searchTerm: searchInput.current.value.toLowerCase() })
         },
         choseLanguage: (selected) => {
-            console.log(selected.current.value);
-            this.setState({ chosenLanguage: selected.current.value })
+            this.setState({ chosenLanguage: selected.current.value });
+
+            const country = this.state.results.filter(country => (country.alpha2Code.toLowerCase() == selected.current.value) || (country.alpha2Code == selected.current.selectedOptions[0].id)
+            )
+
+            this.setState({ flag: country[0].flag });
         }
     }
 

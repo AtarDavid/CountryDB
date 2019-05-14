@@ -16,18 +16,19 @@ export default class Header extends Component {
                             <input name="search" type="text" placeholder={`for example ${context.chosenCountry}`} onChange={() => context.filterResults(this.filterCountry)} ref={this.filterCountry} />
                         </div>
                         <div className="language">
-                            <select ref={this.languagePreference} onChange={() => context.choseLanguage(this.languagePreference)}>
-                                <option value="en" selected>EN</option>
+                            <label htmlFor="select"><img className="languageIcon" alt="flag" src={context.flag} /> Language:</label>
+                            <select name="select" ref={this.languagePreference} onChange={() => context.choseLanguage(this.languagePreference)}>
+                                <option value="en" id="GB" selected>EN</option>
                                 <option value="de">DE</option>
                                 <option value="es">ES</option>
                                 <option value="fr">FR</option>
-                                <option value="ja">JA</option>
+                                <option value="ja" id="JP">JA</option>
                                 <option value="it">IT</option>
                                 <option value="br">BR</option>
                                 <option value="pt">PT</option>
                                 <option value="nl">NL</option>
                                 <option value="hr">HR</option>
-                                <option value="fa">FA</option>
+                                <option value="fa" id="IR">FA</option>
 
                             </select>
                         </div>
