@@ -6,10 +6,10 @@ export default class Country extends Component {
         return (
             <AppContext.Consumer>
                 {context => context.results.map(country => {
-                    const { name, region, subregion, translation, flag } = country;
+                    const { name, region, subregion, translations, flag } = country;
                     return ((name == context.chosenCountry) &&
                         < div className="countryCard" >
-                            <h3>{name}</h3>
+                            <h1>{translations[context.chosenLanguage] || name}</h1>
                             <img width="100" src={flag} />
                             <strong>{region}</strong>
                             <span>{subregion}</span>
