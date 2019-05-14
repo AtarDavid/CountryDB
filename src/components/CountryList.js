@@ -9,7 +9,7 @@ export default class CountryList extends Component {
           <aside>
             <ul>
               {context.results.map(country => (country.name.toLowerCase().includes(context.searchTerm) && <li key={country.name} className={country.name} onClick={context.handleClick}>
-                <h3 className={country.name}>{country.name}</h3>
+                <strong className={country.name}>{country.name}</strong><br/>
                 <span className={country.name}>{country.subregion}</span>
               </li>)
               )}
