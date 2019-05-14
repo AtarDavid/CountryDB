@@ -8,10 +8,10 @@ export default class CountryList extends Component {
         {context =>
           <aside>
             <ul>
-              {context.results.map(country => <li key={country.name} className={country.name} onClick={context.handleClick}>
+              {context.results.map(country => (country.name.toLowerCase().includes(context.searchTerm) && <li key={country.name} className={country.name} onClick={context.handleClick}>
                 <h3 className={country.name}>{country.name}</h3>
                 <span className={country.name}>{country.subregion}</span>
-              </li>
+              </li>)
               )}
             </ul>
           </aside>
